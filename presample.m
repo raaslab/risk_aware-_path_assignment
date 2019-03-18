@@ -15,7 +15,7 @@ function [effi_presamps_path, cost_presamps_path] = presample(pixel_cost_sample,
         for j = 1 : n_robot
             for k = 1 : n_path
 %                 path_pixels_coord{i, j, k} = paths{1, 3*n_path + 2*n_path + k};
-                 path_pixels_coord{i, j, k} = paths{1, (i-1)*n_robot*(n_path+1) + (j-1)*(n_path+1) + k};
+                 path_pixels_coord{i, j, k} = paths{1, (i-1)*n_robot*n_path + (j-1)*n_path + k};
                 % for each sample of the cost on the path.
                 for h = 1 : n_samp
                     temp = 0;

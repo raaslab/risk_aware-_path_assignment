@@ -13,7 +13,7 @@ n_goal = 2;
 n_robot = 3;
 
 % the number of paths from each start to each goal 
-n_path = 2; 
+n_path = 3; 
 
 %/***First part: Pre-Sample of the efficiency***/
 % the number of samples for each efficiency
@@ -42,116 +42,116 @@ xaxis_right = max(effi_presamps_path(:));
 
 
 figure (11), hold on % goal 1 robot 1 three paths
-s(1) = subplot(2,1,1);
+s(1) = subplot(3,1,1);
 histogram(s(1), effi_presamps_path(1,1,1,:)), hold on
 axis([xaxis_left xaxis_right 0 inf])
 title('Goal 1, Robot 1, Paths 1', 'fontsize', 14)
 
-s(2) = subplot(2,1,2);
+s(2) = subplot(3,1,2);
 histogram(s(2), effi_presamps_path(1,1,2,:)), hold on
 axis([xaxis_left xaxis_right 0 inf])
 title('Goal 1, Robot 1, Paths 2', 'fontsize', 14)
 
-% s(3) = subplot(3,1,3);
-% histogram(s(3), effi_presamps_path(1,1,3,:))
-% axis([xaxis_left xaxis_right 0 inf])
-% title('Goal 1, Robot 1, Paths 3', 'fontsize', 14)
+s(3) = subplot(3,1,3);
+histogram(s(3), effi_presamps_path(1,1,3,:))
+axis([xaxis_left xaxis_right 0 inf])
+title('Goal 1, Robot 1, Paths 3', 'fontsize', 14)
 
 
 
 figure (12), hold on % goal 1 robot 1 three paths
-s(1) = subplot(2,1,1);
+s(1) = subplot(3,1,1);
 histogram(s(1), effi_presamps_path(1,2,1,:)), hold on
 axis([xaxis_left xaxis_right 0 inf])
 title('Goal 1, Robot 2, Paths 1', 'fontsize', 14)
 
-s(2) = subplot(2,1,2);
+s(2) = subplot(3,1,2);
 histogram(s(2), effi_presamps_path(1,2,2,:)), hold on
 axis([xaxis_left xaxis_right 0 inf])
 title('Goal 1, Robot 2, Paths 2', 'fontsize', 14)
 
-% s(3) = subplot(3,1,3);
-% histogram(s(3), effi_presamps_path(1,2,3,:))
-% axis([xaxis_left xaxis_right 0 inf])
-% title('Goal 1, Robot 2, Paths 3', 'fontsize', 14)
+s(3) = subplot(3,1,3);
+histogram(s(3), effi_presamps_path(1,2,3,:))
+axis([xaxis_left xaxis_right 0 inf])
+title('Goal 1, Robot 2, Paths 3', 'fontsize', 14)
 
 
 
 figure (13), hold on % goal 1 robot 1 three paths
-s(1) = subplot(2,1,1);
+s(1) = subplot(3,1,1);
 histogram(s(1), effi_presamps_path(1,3,1,:)), hold on
 axis([xaxis_left xaxis_right 0 inf])
 title('Goal 1, Robot 3, Paths 1', 'fontsize', 14)
 
-s(2) = subplot(2,1,2);
+s(2) = subplot(3,1,2);
 histogram(s(2), effi_presamps_path(1,3,2,:)), hold on
 axis([xaxis_left xaxis_right 0 inf])
 title('Goal 1, Robot 3, Paths 2', 'fontsize', 14)
 
-% s(3) = subplot(3,1,3);
-% histogram(s(3), effi_presamps_path(1,3,3,:))
-% axis([xaxis_left xaxis_right 0 inf])
-% title('Goal 1, Robot 3, Paths 3', 'fontsize', 14)
+s(3) = subplot(3,1,3);
+histogram(s(3), effi_presamps_path(1,3,3,:))
+axis([xaxis_left xaxis_right 0 inf])
+title('Goal 1, Robot 3, Paths 3', 'fontsize', 14)
 
 
 
 figure (21), hold on % goal 1 robot 1 three paths
-s(1) = subplot(2,1,1);
+s(1) = subplot(3,1,1);
 histogram(s(1), effi_presamps_path(2,1,1,:)), hold on
 axis([xaxis_left xaxis_right 0 inf])
 title('Goal 2, Robot 1, Paths 1', 'fontsize', 14)
 
-s(2) = subplot(2,1,2);
+s(2) = subplot(3,1,2);
 histogram(s(2), effi_presamps_path(2,1,2,:)), hold on
 axis([xaxis_left xaxis_right 0 inf])
 title('Goal 2, Robot 1, Paths 2', 'fontsize', 14)
 
-% s(3) = subplot(3,1,3);
-% histogram(s(3), effi_presamps_path(2,1,3,:))
-% axis([xaxis_left xaxis_right 0 inf])
-% title('Goal 2, Robot 1, Paths 3', 'fontsize', 14)
+s(3) = subplot(3,1,3);
+histogram(s(3), effi_presamps_path(2,1,3,:))
+axis([xaxis_left xaxis_right 0 inf])
+title('Goal 2, Robot 1, Paths 3', 'fontsize', 14)
 
 
 
 figure (22), hold on % goal 1 robot 1 three paths
-s(1) = subplot(2,1,1);
+s(1) = subplot(3,1,1);
 histogram(s(1), effi_presamps_path(2,2,1,:)), hold on
 axis([xaxis_left xaxis_right 0 inf])
 title('Goal 2, Robot 2, Paths 1', 'fontsize', 14)
 
-s(2) = subplot(2,1,2);
+s(2) = subplot(3,1,2);
 histogram(s(2), effi_presamps_path(2,2,2,:)), hold on
 axis([xaxis_left xaxis_right 0 inf])
 title('Goal 2, Robot 2, Paths 2', 'fontsize', 14)
 
-% s(3) = subplot(3,1,3);
-% histogram(s(3), effi_presamps_path(2,2,3,:))
-% axis([xaxis_left xaxis_right 0 inf])
-% title('Goal 2, Robot 2, Paths 3', 'fontsize', 14)
+s(3) = subplot(3,1,3);
+histogram(s(3), effi_presamps_path(2,2,3,:))
+axis([xaxis_left xaxis_right 0 inf])
+title('Goal 2, Robot 2, Paths 3', 'fontsize', 14)
 
 
 
 figure (23), hold on % goal 1 robot 1 three paths
-s(1) = subplot(2,1,1);
+s(1) = subplot(3,1,1);
 histogram(s(1), effi_presamps_path(2,3,1,:)), hold on
 axis([xaxis_left xaxis_right 0 inf])
 title('Goal 2, Robot 3, Paths 1', 'fontsize', 14)
 
-s(2) = subplot(2,1,2);
+s(2) = subplot(3,1,2);
 histogram(s(2), effi_presamps_path(2,3,2,:)), hold on
 axis([xaxis_left xaxis_right 0 inf])
 title('Goal 2, Robot 3, Paths 2', 'fontsize', 14)
 
-% s(3) = subplot(3,1,3);
-% histogram(s(3), effi_presamps_path(2,3,3,:))
-% axis([xaxis_left xaxis_right 0 inf])
-% title('Goal 2, Robot 3, Paths 3', 'fontsize', 14)
+s(3) = subplot(3,1,3);
+histogram(s(3), effi_presamps_path(2,3,3,:))
+axis([xaxis_left xaxis_right 0 inf])
+title('Goal 2, Robot 3, Paths 3', 'fontsize', 14)
 
 
-% %% Gaussion test
-% % create two tested gaussian distributions
-% n_samp = 5000;
-% effi_presamps_path = zeros(n_goal, n_robot, n_path, n_samp);
+%%
+% create three tested gaussian distributions
+n_samp = 5000;
+effi_presamps_path = zeros(1, 1, 3, n_samp);
 % path1 = [];
 % path2 = [];
 % while length(path1) <= n_samp
@@ -161,17 +161,36 @@ title('Goal 2, Robot 3, Paths 2', 'fontsize', 14)
 %     end
 % 
 % end
-% effi_presamps_path(1,1,1,:) = path1(1:n_samp,1);
+path1 = normrnd(50,10, n_samp, 1); 
+effi_presamps_path(1,1,1,:) = path1(1:n_samp,1);
 % while length(path2) <= n_samp
 %         r2 = normrnd(40,5);
 %         if r2>=30 && r2 <=60
 %          path2 = [path2; r2]; 
 %         end
 % end
-% effi_presamps_path(1,1,2,:) = path2(1:n_samp,1);
-% figure (1)
-% s(1) = subplot(2,1,1);
-% s(2) = subplot(2,1,2);
-% histogram(s(1), effi_presamps_path(1,1,1,:)), hold on
-% histogram(s(2), effi_presamps_path(1,1,2,:))
-% upper_bound = n_goal * round(max(effi_presamps_path(:)));
+path2 = normrnd(40,4, n_samp, 1); 
+effi_presamps_path(1,1,2,:) = path2(1:n_samp,1);
+
+path3 = normrnd(35,2, n_samp, 1); 
+effi_presamps_path(1,1,3,:) = path3(1:n_samp,1);
+
+xaxis_left = min(effi_presamps_path(:));
+xaxis_right = max(effi_presamps_path(:));
+
+figure (1)
+
+s(1) = subplot(3,1,1);
+histogram(s(1), effi_presamps_path(1,1,1,:)), hold on
+axis([xaxis_left xaxis_right 0 inf])
+title('Paths 1', 'fontsize', 14)
+
+s(2) = subplot(3,1,2);
+histogram(s(2), effi_presamps_path(1,1,2,:)), hold on
+axis([xaxis_left xaxis_right 0 inf])
+title('Paths 2', 'fontsize', 14)
+
+s(3) = subplot(3,1,3);
+histogram(s(3), effi_presamps_path(1,1,3,:)), hold on
+axis([xaxis_left xaxis_right 0 inf])
+title('Paths 3', 'fontsize', 14)

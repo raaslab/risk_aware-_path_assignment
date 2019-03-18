@@ -12,7 +12,8 @@ n_goal = 2;
 n_robot = 3;
 
 % the number of paths from each start to each goal 
-n_path = 2; 
+n_path = 3; 
+
 
 %/***First part: Pre-Sample of the efficiency***/
 % the number of samples for each efficiency
@@ -51,70 +52,6 @@ effi_presamps_path = effi_presamps_path * 10^5;
 upper_bound = n_goal * round(max(effi_presamps_path(:)));
 
 
-% figure (1)
-% s(1) = subplot(3,1,1);
-% histogram(s(1), effi_presamps_path(1,1,1,:)), hold on
-% axis([xaxis_left xaxis_right 0 inf])
-% title('Goal 1, Robot 1, Paths 1', 'fontsize', 14)
-% 
-% s(2) = subplot(3,1,2);
-% histogram(s(2), effi_presamps_path(1,1,2,:)), hold on
-% axis([xaxis_left xaxis_right 0 inf])
-% title('Goal 1, Robot 1, Paths 2', 'fontsize', 14)
-% 
-% s(3) = subplot(3,1,3);
-% histogram(s(3), effi_presamps_path(1,1,3,:))
-% axis([xaxis_left xaxis_right 0 inf])
-% title('Goal 1, Robot 1, Paths 3', 'fontsize', 14)
-% %%
-% % create two tested gaussian distributions
-% n_samp = 5000;
-% effi_presamps_path = zeros(n_goal, n_robot, n_path, n_samp);
-% % path1 = [];
-% % path2 = [];
-% % while length(path1) <= n_samp
-% %     r1 = normrnd(50,10); 
-% %     if r1>=0 && r1<=100
-% %         path1 = [path1; r1]; 
-% %     end
-% % 
-% % end
-% path1 = normrnd(50,10, n_samp, 1); 
-% effi_presamps_path(1,1,1,:) = path1(1:n_samp,1);
-% % while length(path2) <= n_samp
-% %         r2 = normrnd(40,5);
-% %         if r2>=30 && r2 <=60
-% %          path2 = [path2; r2]; 
-% %         end
-% % end
-% path2 = normrnd(40,4, n_samp, 1); 
-% effi_presamps_path(1,1,2,:) = path2(1:n_samp,1);
-% 
-% path3 = normrnd(35,2, n_samp, 1); 
-% effi_presamps_path(1,1,3,:) = path3(1:n_samp,1);
-% 
-% xaxis_left = min(effi_presamps_path(:));
-% xaxis_right = max(effi_presamps_path(:));
-% 
-% figure (1)
-% 
-% s(1) = subplot(3,1,1);
-% histogram(s(1), effi_presamps_path(1,1,1,:)), hold on
-% axis([xaxis_left xaxis_right 0 inf])
-% title('Paths 1', 'fontsize', 14)
-% 
-% s(2) = subplot(3,1,2);
-% histogram(s(2), effi_presamps_path(1,1,2,:)), hold on
-% axis([xaxis_left xaxis_right 0 inf])
-% title('Paths 2', 'fontsize', 14)
-% 
-% s(3) = subplot(3,1,3);
-% histogram(s(3), effi_presamps_path(1,1,3,:)), hold on
-% axis([xaxis_left xaxis_right 0 inf])
-% title('Paths 3', 'fontsize', 14)
-% 
-% upper_bound = n_goal * round(max(effi_presamps_path(:)));
-%%
 % user-defined searching separation for tau
 serh_sep = 0.5;
 % user-defined risk levels
@@ -155,41 +92,43 @@ for i = 1 : length(risk_levels)
     % store {cvar_grepath}
     cvar_grepath_rlevels{i} = cvar_grepath;
 end
-%%
-% plot h(S^{gre},tau) w.r.t. risk levels
-figure (1)
-plot(cvar_hvalue_rlevels(:,1), cvar_hvalue_rlevels(:,2), 'r*'), hold on 
-
-% plot additive error w.r.t. risk levels
-figure (2)
-plot(cvar_adderr_rlevels(:,1), cvar_adderr_rlevels(:,2), 'bo'), hold on
-
-% plot distribution of f(S,y) w.r.t. risk levels
-figure (3)
-nhist(cvar_gredis_rlevels, 'legend', {'$$\alpha=0.001$$', '$$\alpha=0.01$$', ...
- '$$\alpha=0.01$$', '$$\alpha=0.3$$', ...
- '$$\alpha=0.6$$', '$$\alpha=0.9$$', '$$\alpha=1$$'}); 
-
-%%
-% we use greey set and greey path to illustrate the simple path assignment examples.
-
-% plot goals, starts, paths
-figure (4)
-plot(goals(:,1), goals(:,2), 'rx'), hold on
-plot(starts(:,1), starts(:,2), 'ks'), hold on
-plot(paths)
-
-% when risk_level = 0.1
-cvar_greset_rlevels{3};
-cvar_grepath_rlevels{3};
-
-for i = 1 : length(cvar_greset_rlevels{3}) % search goals
-    for j = 1 : length(cvar_greset_rlevels{3}{i}) % for each goal i, evaluate S_i
-        % the goal pos [x,y]
-        [goals(i,1), goals(i,2)];
-        % the start pos assigned [x,y]
-        [starts(cvar_greset_rlevels{3}{i}(j,1)), starts(cvar_greset_rlevels{3}{i}(j,2))]
-        % the path selected 
-        cvar_grepath_rlevels{3}{i}(j);
-    end
-end
+cvar_greset_rlevels
+cvar_grepath_rlevels
+% %%
+% % plot h(S^{gre},tau) w.r.t. risk levels
+% figure (1)
+% plot(cvar_hvalue_rlevels(:,1), cvar_hvalue_rlevels(:,2), 'r*'), hold on 
+% 
+% % plot additive error w.r.t. risk levels
+% figure (2)
+% plot(cvar_adderr_rlevels(:,1), cvar_adderr_rlevels(:,2), 'bo'), hold on
+% 
+% % plot distribution of f(S,y) w.r.t. risk levels
+% figure (3)
+% nhist(cvar_gredis_rlevels, 'legend', {'$$\alpha=0.001$$', '$$\alpha=0.01$$', ...
+%  '$$\alpha=0.01$$', '$$\alpha=0.3$$', ...
+%  '$$\alpha=0.6$$', '$$\alpha=0.9$$', '$$\alpha=1$$'}); 
+% 
+% %%
+% % we use greey set and greey path to illustrate the simple path assignment examples.
+% 
+% % plot goals, starts, paths
+% figure (4)
+% plot(goals(:,1), goals(:,2), 'rx'), hold on
+% plot(starts(:,1), starts(:,2), 'ks'), hold on
+% plot(paths)
+% 
+% % when risk_level = 0.1
+% cvar_greset_rlevels{3};
+% cvar_grepath_rlevels{3};
+% 
+% for i = 1 : length(cvar_greset_rlevels{3}) % search goals
+%     for j = 1 : length(cvar_greset_rlevels{3}{i}) % for each goal i, evaluate S_i
+%         % the goal pos [x,y]
+%         [goals(i,1), goals(i,2)];
+%         % the start pos assigned [x,y]
+%         [starts(cvar_greset_rlevels{3}{i}(j,1)), starts(cvar_greset_rlevels{3}{i}(j,2))]
+%         % the path selected 
+%         cvar_grepath_rlevels{3}{i}(j);
+%     end
+% end
