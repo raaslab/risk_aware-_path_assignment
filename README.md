@@ -1,9 +1,11 @@
 # risk_aware-_path_assignment
 
 main function: start_goal_path_assign.m
+
 Run the codes before Figure plot (line 158)
 
 "cvar_greset_rlevels" stores the robots assign to goal 1, 2, ... with different risk levels,
+
 For example, [2; 1, 3] denotes robot 2 is assigned to goal 1 and robots 1 and 3 are assigned to goal 2
 
 "cvar_grepath_rlevels" stores the corresponding paths of the assigned robots. 
